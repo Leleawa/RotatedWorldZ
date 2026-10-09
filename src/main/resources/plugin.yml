@@ -1,0 +1,20 @@
+name: RotatedWorldZ
+version: '${version}'
+
+main: me.leleawa.rotatedworld.RotatedWorldPlugin
+api-version: '1.21'
+folia-supported: true
+depend: [ packetevents ]
+description: RotatedWorld, written in Java, Kotlin, Scala 3, Gosu, Groovy, Kawa Scheme, Xtend, Fantom, Flix, Frege, Clojure, Haxe, Kotlin Script, JRuby, JavaScript, Jython, Lua, BeanShell, Common Lisp and Prolog.
+
+authors: [ Leleawa1337 ]
+
+commands:
+  rotate:
+    description: 切换 / 查看旋转视角
+    usage: "/<command> [on|off|toggle|status|unstuck|reload] [玩家]"
+    permission: rotatedworld.admin
+
+permissions:
+  rotatedworld.admin:
+    default: op

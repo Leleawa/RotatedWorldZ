@@ -1,0 +1,13 @@
+// BeanShell 层：/rotate status 的那一行字（原来在 Groovy 的 RotateCommand 里）。Java 语法，解释执行。
+
+String statusLine(player, outOff, inOff, generation, clientX, clientY, clientZ, sentColumns, entities, cachedChunks) {
+    return "§e" + player + ": offset=" + outOff + " (in=" + inOff + ") gen=" + generation
+        + " 客户端坐标=" + String.format("(%.1f, %.1f, %.1f)", new Object[] { clientX, clientY, clientZ })
+        + " 已发区块柱=" + sentColumns + " 实体=" + entities + " 缓存区块=" + cachedChunks;
+}
+
+// 摔落伤害陪审团的一员
+double fallDamage(fall, creative, spectator, flying, gliding, inWater, slowFalling) {
+    if (creative || spectator || flying || gliding || inWater || slowFalling) return 0.0;
+    return Math.max(Math.ceil(fall - 3.0), 0.0);
+}

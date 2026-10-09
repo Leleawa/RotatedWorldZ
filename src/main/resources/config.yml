@@ -1,0 +1,37 @@
+# 新进服的玩家默认是否旋转（/rotate on|off 可以单独切换）
+enabled-by-default: true
+
+# 客户端区块柱半径（不能超过服务端 view-distance）
+view-radius: 8
+
+# 玩家离客户端高度窗口中心超过这么多格就重新定位（浮动原点）
+recenter-threshold: 64
+
+# 服务端 Z 方向多预取几个区块，重新定位时不用等
+prefetch-chunks: 4
+
+# 竖直速度超过这个值（格/tick）算高速移动（下落终端速度约 3.9）
+fast-speed: 0.8
+# 高速移动时，离窗口边缘不到这么多格就重新定位……
+fast-edge-distance: 112
+# ……并且把玩家放到窗口另一端、离边缘这么多格的地方（下落时下方留出约 300 格）
+fast-target-margin: 80
+# 高速移动时往运动方向多预取的区块数
+prefetch-ahead-chunks: 14
+
+# 每 tick 最多发送多少个客户端区块柱
+columns-per-tick: 24
+
+# 每个玩家每 tick 最多请求多少个服务端区块（取快照 / 异步加载）
+chunk-requests-per-tick: 24
+
+# 旋转视角下的安全出生点：客户端里的"地面"是服务端方块的南面，原版出生点在旋转后大概率悬空
+safe-spawn:
+  # 死亡重生后在附近找一个能站稳的位置
+  on-respawn: true
+  # 进服时也找（默认关：会把玩家从下线的位置挪开）
+  on-join: false
+  # 搜索半径（格）
+  radius: 32
+
+debug: false

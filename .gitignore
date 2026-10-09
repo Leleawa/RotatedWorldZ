@@ -1,0 +1,10 @@
+.gradle/
+build/
+.idea/
+*.iml
+.tools/
+.kotlin/
+out/
+run/
+.clj-kondo/
+.lsp/
